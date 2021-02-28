@@ -15,6 +15,15 @@ CREATE TABLE titles (
 	PRIMARY KEY (title_id)
 );
 
+--Code to correct hire_date and birth_date columns to date as opposed to VARCHAR
+ALTER TABLE employees
+ALTER COLUMN hire_date TYPE date
+USING hire_date::date;
+
+ALTER TABLE employees
+ALTER COLUMN birth_date TYPE date
+USING birth_date::date;
+
 --4. Create  table employees
 CREATE TABLE employees (
 	emp_no VARCHAR(30) NOT NULL,
